@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "com.paypal.bfs.test.employeeserv.api.model.Employee" table = "EMPLOYEE" >
+
+        <meta attribute = "class-description">
+            This class contains the Employee detail.
+        </meta>
+
+        <id name = "id" type = "int" column = "id">
+            <generator class="native"/>
+        </id>
+
+        <property name = "firstName" column = "first_name" type = "string"/>
+        <property name = "lastName" column = "last_name" type = "string"/>
+        <property name = "dateOfBirth" column = "date_of_birth" type = "date"/>
+        <component name="address">
+            <property name = "line1" column = "line1" type = "string"/>
+            <property name = "line2" column = "line2" type = "string"/>
+            <property name = "city" column = "city" type = "string"/>
+            <property name = "state" column = "state" type = "string"/>
+            <property name = "zipCode" column = "zip_code" type = "string"/>
+
+        </component>
+    </class>
+
+</hibernate-mapping>
